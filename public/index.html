@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Viewer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .container {
+      margin-top: 20px;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">API Viewer</h1>
+
+    <!-- Fetch All Users -->
+    <div class="card">
+      <div class="card-header">
+        <h4>Users</h4>
+      </div>
+      <div class="card-body">
+        <button id="fetch-users-btn" class="btn btn-info mb-3">Fetch All Users</button>
+        <div id="users-list"></div>
+      </div>
+    </div>
+
+    <!-- Fetch Posts -->
+    <div class="card">
+      <div class="card-header">
+        <h4>Posts</h4>
+      </div>
+      <div class="card-body">
+        <button id="fetch-posts-btn" class="btn btn-info mb-3">Fetch All Posts</button>
+        <div id="posts-list"></div>
+      </div>
+    </div>
+
+    <!-- Fetch Comments -->
+    <div class="card">
+      <div class="card-header">
+        <h4>Comments</h4>
+      </div>
+      <div class="card-body">
+        <button id="fetch-comments-btn" class="btn btn-info mb-3">Fetch All Comments</button>
+        <div id="comments-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script>
+    const apiUrl = 'http://localhost:3001'; // Base URL of your API
+
+    // Fetch and display all users
+    document.getElementById('fetch-users-btn').addEventListener('click', async () => {
+      const response = await fetch(`${apiUrl}/users`);
+      const users = await response.json();
+      const usersList = document.getElementById('users-list');
+      usersList.innerHTML = users.map(user => `
+        <div class="alert alert-secondary">User ID: ${user.id}, Name: ${user.name}</div>
+      `).join('');
+    });
+
+    // Fetch and display all posts
+    document.getElementById('fetch-posts-btn').addEventListener('click', async () => {
+      const response = await fetch(`${apiUrl}/posts`);
+      const posts = await response.json();
+      const postsList = document.getElementById('posts-list');
+      postsList.innerHTML = posts.map(post => `
+        <div class="card">
+          <div class="card-header">
+            <h5>${post.title}</h5>
+          </div>
+          <div class="card-body">
+            <p>${post.content}</p>
+            <small>Created by User: ${post.user.name}</small>
+          </div>
+        </div>
+      `).join('');
+    });
+
+    // Fetch and display all comments
+    document.getElementById('fetch-comments-btn').addEventListener('click', async () => {
+      const response = await fetch(`${apiUrl}/comments`);
+      const comments = await response.json();
+      const commentsList = document.getElementById('comments-list');
+      commentsList.innerHTML = comments.map(comment => `
+        <div class="alert alert-light">
+          <strong>Post :</strong> ${comment.post.title} <br>
+          <strong>Comment:</strong> ${comment.content}
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>

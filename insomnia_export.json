@@ -1,0 +1,227 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2024-11-28T00:00:00.000Z",
+    "__export_source": "insomnia.desktop.app:v2023.5.8",
+    "resources": [
+      {
+        "_id": "wrk_1234567890abcdef",
+        "created": 1609459200000,
+        "description": "",
+        "modified": 1609459200000,
+        "name": "API Tests",
+        "scope": "collection",
+        "_type": "workspace"
+      },
+      {
+        "_id": "env_1234567890abcdef",
+        "created": 1609459200000,
+        "data": {
+          "base_url": "http://localhost:3001"
+        },
+        "modified": 1609459200000,
+        "name": "Base Environment",
+        "parentId": "wrk_1234567890abcdef",
+        "_type": "environment"
+      },
+      {
+        "_id": "fld_1234567890abcdef",
+        "created": 1609459200000,
+        "description": "",
+        "modified": 1609459200000,
+        "name": "Endpoints",
+        "parentId": "wrk_1234567890abcdef",
+        "_type": "request_group"
+      },
+      {
+        "_id": "req_1234567890abcd01",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "GET",
+        "modified": 1609459200000,
+        "name": "Fetch All Users",
+        "parentId": "fld_1234567890abcdef",
+        "url": "{{ base_url }}/users",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd02",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "GET",
+        "modified": 1609459200000,
+        "name": "Fetch All Posts",
+        "parentId": "fld_1234567890abcdef",
+        "url": "{{ base_url }}/posts",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd03",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "GET",
+        "modified": 1609459200000,
+        "name": "Fetch All Comments",
+        "parentId": "fld_1234567890abcdef",
+        "url": "{{ base_url }}/comments",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd04",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "POST",
+        "modified": 1609459200000,
+        "name": "Create New User",
+        "parentId": "fld_1234567890abcdef",
+        "body": {
+          "mimeType": "application/json",
+          "text": "{\n  \"name\": \"New User\"\n}"
+        },
+        "url": "{{ base_url }}/users",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd05",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "POST",
+        "modified": 1609459200000,
+        "name": "Create New Post",
+        "parentId": "fld_1234567890abcdef",
+        "body": {
+          "mimeType": "application/json",
+          "text": "{\n  \"title\": \"New Post\",\n  \"content\": \"This is a new post\",\n  \"created_by\": 1\n}"
+        },
+        "url": "{{ base_url }}/posts",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd06",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "POST",
+        "modified": 1609459200000,
+        "name": "Create New Comment",
+        "parentId": "fld_1234567890abcdef",
+        "body": {
+          "mimeType": "application/json",
+          "text": "{\n  \"post_id\": 1,\n  \"text\": \"This is a comment\"\n}"
+        },
+        "url": "{{ base_url }}/comments",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd07",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "GET",
+        "modified": 1609459200000,
+        "name": "Fetch User by ID",
+        "parentId": "fld_1234567890abcdef",
+        "url": "{{ base_url }}/users/{{ user_id }}",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd08",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "GET",
+        "modified": 1609459200000,
+        "name": "Fetch Post by ID",
+        "parentId": "fld_1234567890abcdef",
+        "url": "{{ base_url }}/posts/{{ post_id }}",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd09",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "GET",
+        "modified": 1609459200000,
+        "name": "Fetch Comment by ID",
+        "parentId": "fld_1234567890abcdef",
+        "url": "{{ base_url }}/comments/{{ comment_id }}",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd10",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "PUT",
+        "modified": 1609459200000,
+        "name": "Update User",
+        "parentId": "fld_1234567890abcdef",
+        "body": {
+          "mimeType": "application/json",
+          "text": "{\n  \"name\": \"Updated User Name\"\n}"
+        },
+        "url": "{{ base_url }}/users/{{ user_id }}",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd11",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "PUT",
+        "modified": 1609459200000,
+        "name": "Update Post",
+        "parentId": "fld_1234567890abcdef",
+        "body": {
+          "mimeType": "application/json",
+          "text": "{\n  \"title\": \"Updated Post Title\",\n  \"content\": \"Updated content for the post\"\n}"
+        },
+        "url": "{{ base_url }}/posts/{{ post_id }}",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd12",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "PUT",
+        "modified": 1609459200000,
+        "name": "Update Comment",
+        "parentId": "fld_1234567890abcdef",
+        "body": {
+          "mimeType": "application/json",
+          "text": "{\n  \"text\": \"Updated comment text\"\n}"
+        },
+        "url": "{{ base_url }}/comments/{{ comment_id }}",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd13",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "DELETE",
+        "modified": 1609459200000,
+        "name": "Delete User",
+        "parentId": "fld_1234567890abcdef",
+        "url": "{{ base_url }}/users/{{ user_id }}",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd14",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "DELETE",
+        "modified": 1609459200000,
+        "name": "Delete Post",
+        "parentId": "fld_1234567890abcdef",
+        "url": "{{ base_url }}/posts/{{ post_id }}",
+        "_type": "request"
+      },
+      {
+        "_id": "req_1234567890abcd15",
+        "created": 1609459200000,
+        "headers": [],
+        "method": "DELETE",
+        "modified": 1609459200000,
+        "name": "Delete Comment",
+        "parentId": "fld_1234567890abcdef",
+        "url": "{{ base_url }}/comments/{{ comment_id }}",
+        "_type": "request"
+      }
+    ]
+  }
+  
