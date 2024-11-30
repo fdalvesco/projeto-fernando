@@ -35,7 +35,7 @@ Gerenciamento de Usuários:
 
 Entidade User configurada para armazenar dados dos usuários.
 Controle via users.controller.ts e lógica de negócios centralizada em users.service.ts.
-Gerenciamento de Postagens:
+<br/>Gerenciamento de Postagens:
 
 Entidade Post para representar as postagens do blog.
 API exposta por posts.controller.ts com serviços no módulo posts.module.ts.
