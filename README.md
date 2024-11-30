@@ -26,33 +26,39 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-Descrição do Projeto - Blog Interativo com NestJS
+# Descrição do Projeto - Blog Interativo com NestJS
 
 O projeto consiste no desenvolvimento de uma aplicação de blog utilizando o framework NestJS no backend, com uma interface frontend para exibição de dados. A solução foi projetada para gerenciar e exibir informações sobre usuários, postagens e comentários, demonstrando um fluxo integrado entre as camadas de aplicação.
 
-Funcionalidades Principais
-Gerenciamento de Usuários:
+## Funcionalidades Principais
 
-Entidade User configurada para armazenar dados dos usuários.
-Controle via users.controller.ts e lógica de negócios centralizada em users.service.ts.
-<br/>Gerenciamento de Postagens:
+### Gerenciamento de Usuários:
+- Entidade `User` configurada para armazenar dados dos usuários.
+- Controle via `users.controller.ts` e lógica de negócios centralizada em `users.service.ts`.
 
-Entidade Post para representar as postagens do blog.
-API exposta por posts.controller.ts com serviços no módulo posts.module.ts.
-Gerenciamento de Comentários:
+### Gerenciamento de Postagens:
+- Entidade `Post` para representar as postagens do blog.
+- API exposta por `posts.controller.ts` com serviços no módulo `posts.module.ts`.
 
-Entidade Comment para associar comentários às postagens.
-Funcionalidades expostas e gerenciadas pelos módulos dedicados a comentários.
-Aspectos Técnicos
-Estrutura Modular: Cada domínio (usuários, postagens, comentários) é organizado em módulos independentes, seguindo as boas práticas de modularidade do NestJS.
-ORM: Uso de uma camada de entidade para interagir com o banco de dados, permitindo consultas e operações com usuários, posts e comentários.
-Frontend: Uma página HTML básica (index.html em public/) está configurada para apresentar a interface inicial.
-Tecnologias Utilizadas
-Framework Backend: NestJS.
-Linguagem de Programação: TypeScript.
-Configuração de Build: Arquivos tsconfig.json e nest-cli.json configurados para otimizar o ambiente de desenvolvimento e produção.
-Testes: Testes unitários e de integração configurados para os módulos principais (app.controller.spec.ts, users.controller.spec.ts, etc.).
-Objetivo
+### Gerenciamento de Comentários:
+- Entidade `Comment` para associar comentários às postagens.
+- Funcionalidades expostas e gerenciadas pelos módulos dedicados a comentários.
+
+## Aspectos Técnicos
+
+- **Estrutura Modular**: Cada domínio (usuários, postagens, comentários) é organizado em módulos independentes, seguindo as boas práticas de modularidade do NestJS.
+- **ORM**: Uso de uma camada de entidade para interagir com o banco de dados, permitindo consultas e operações com usuários, posts e comentários.
+- **Frontend**: Uma página HTML básica (`index.html` em `public/`) está configurada para apresentar a interface inicial.
+
+## Tecnologias Utilizadas
+
+- **Framework Backend**: NestJS.
+- **Linguagem de Programação**: TypeScript.
+- **Configuração de Build**: Arquivos `tsconfig.json` e `nest-cli.json` configurados para otimizar o ambiente de desenvolvimento e produção.
+- **Testes**: Testes unitários e de integração configurados para os módulos principais (`app.controller.spec.ts`, `users.controller.spec.ts`, etc.).
+
+## Objetivo
+
 O projeto busca fornecer um exemplo prático de como desenvolver um blog modular e escalável, utilizando as melhores práticas de desenvolvimento backend e uma interface simples para visualização de dados.
 
 ## Project setup
